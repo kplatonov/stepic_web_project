@@ -6,5 +6,5 @@ def wsgi_application(environ, start_response):
     ]
     query = environ['QUERY_STRING']
     start_response(status, headers )
-    #[bytes(i + '\n', 'ascii') for i in environ['QUERY_STRING'].split('&')]
-    return environ['QUERY_STRING'].split('&') 
+    return [bytes(i + '\n', 'ascii') for i in environ['QUERY_STRING'].split('&')]
+    #return environ['QUERY_STRING'].split('&') 
