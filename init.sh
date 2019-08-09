@@ -10,4 +10,5 @@ sudo ln -s /home/box/web/etc/gunicorn.conf   /etc/gunicorn.d/test
 #gunicorn --bind="0.0.0.0:8080" hello:wsgi_application
 
 cd /home/box/web/ask
-sudo gunicorn --bind 0.0.0.0:8000 --access-logfile acc.log --error-logfile err.log ask.wsgi:application  &
+sudo gunicorn --pythonpath /home/box/web --bind 0.0.0.0:8000 --access-logfile acc.log --error-logfile err.log ask.wsgi:application  &
+

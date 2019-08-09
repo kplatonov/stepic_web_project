@@ -25,7 +25,7 @@ SECRET_KEY = 'arq^6_o^r*we@$*i1tz!=irfv37=dnl)=&n*#9x-7vm(!oop-7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
