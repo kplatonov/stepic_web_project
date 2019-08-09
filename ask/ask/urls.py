@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import re_path
 
 admin.autodiscover()
 
@@ -32,7 +33,9 @@ urlpatterns = [
     path('^$', views.test),
     path('login/', views.test, name='login'),
     path('signup/', views.test, name='signup'),
-    path('question/<[0-9]+>/', views.test, name='question'),
+    #path('question/<[0-9]+>/', views.test, name='question'),
+    #path('question/<int:id>/', views.test, name='question'),
+    re_path(r'^question/<\d+>/', views.test, name='question'),
     path('ask/', views.test, name='ask'),
     path('popular/', views.test, name='popular'),
     path('new/', views.test, name='new'),
