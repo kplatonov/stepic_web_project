@@ -16,6 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+admin.autodiscover()
+
+from qa import views
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    #path(r'^login/', include('qa.urls')),
+    #path(r'^$', include('qa.urls')),                                                              
+    #path(r'^login/.*$', include('qa.urls')),                                    
+    #path(r'^signup/.*', include('qa.urls')),                                   
+    #path(r'^question/(?P<id>[0-9]+)/$', include('qa.urls')),                 
+    #path(r'^ask/.*',  include('qa.urls')),                                         
+    #path(r'^popular/.*', include('qa.urls')),                                 
+    #path(r'^new/.*', include('qa.urls')),
+    path('^$', views.test),
+    path('login/', views.test, name='login'),
+    path('signup/', views.test, name='signup'),
+    path('question/<[0-9]+>/', views.test, name='question'),
+    path('ask/', views.test, name='ask'),
+    path('popular/', views.test, name='popular'),
+    path('new/', views.test, name='new'),
 ]
